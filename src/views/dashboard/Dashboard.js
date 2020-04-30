@@ -11,6 +11,7 @@ import {States} from "../bases/State";
 import {Events} from "../bases/Events";
 import {Forms} from "../bases/Forms";
 import {StatePromotion} from "../bases/StatePromotion";
+import {Inheritance} from "../bases/Inheritance";
 
 export function Dashboard (props) {
   return (
@@ -31,8 +32,8 @@ export function Dashboard (props) {
         <Link to="/promotion">
           <button className='btn btn-warning mr-4'>状态提升</button>
         </Link>
-        <Link to="/news">
-          <button className='btn btn-info mr-4'>新闻</button>
+        <Link to="/Inheritance">
+          <button className='btn btn-info mr-4'>组合继承</button>
         </Link>
         <Link to="/news">
           <button className='btn btn-dark mr-4'>新闻</button>
@@ -46,6 +47,7 @@ export function Dashboard (props) {
         <Route exact path={'/event'} component={Events}/>
         <Route exact path={'/forms'} component={Forms}/>
         <Route exact path={'/promotion'} component={StatePromotion}/>
+        <Route exact path={'/inheritance'} component={Inheritance}/>
         {/*<Redirect path={'/'} to={{pathname: "/home", state: {}}}/>*/}
       </section>
     </div>
