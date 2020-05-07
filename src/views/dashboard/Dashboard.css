@@ -15,6 +15,9 @@
     background: #B1B1B1;
     overflow-x: auto;
 }
+.header .btn{
+    white-space: nowrap;
+}
 .content{
     height: calc(100% - 60px);
 }

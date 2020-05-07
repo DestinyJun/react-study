@@ -5,15 +5,21 @@
  */
 import React from 'react';
 import './Dashboard.css';
-import {Route, Link, Redirect} from "react-router-dom";
+import {Route, Link} from "react-router-dom";
 import {Home} from "../home/Home";
 import {States} from "../bases/State";
 import {Events} from "../bases/Events";
 import {Forms} from "../bases/Forms";
 import {StatePromotion} from "../bases/StatePromotion";
 import {Inheritance} from "../bases/Inheritance";
+import {Context} from "../bases/Context";
+import {Errors} from "../bases/Errors";
+import {Refs} from "../bases/Refs";
+import {Fragments} from "../bases/Fragments";
+import {HeightComponent} from "../bases/HeightComponent";
+import {ThirdParty} from "../bases/ThirdParty";
 
-export function Dashboard (props) {
+export function Dashboard(props) {
   return (
     <div className='container-fluid'>
       <header className="header">
@@ -35,19 +41,43 @@ export function Dashboard (props) {
         <Link to="/Inheritance">
           <button className='btn btn-info mr-4'>组合继承</button>
         </Link>
-        <Link to="/news">
-          <button className='btn btn-dark mr-4'>新闻</button>
+        <Link to="/context">
+          <button className='btn btn-dark mr-4'>context</button>
+        </Link>
+        <Link to="/errors">
+          <button className='btn btn-primary mr-4'>错误边界</button>
+        </Link>
+        <Link to="/refs">
+          <button className='btn btn-secondary mr-4'>Refs转发</button>
+        </Link>
+        <Link to="/fragments">
+          <button className='btn btn-success mr-4'>Fragments</button>
+        </Link>
+        <Link to="/heightCom">
+          <button className='btn btn-danger mr-4'>高阶组件</button>
+        </Link>
+        <Link to="/third">
+          <button className='btn btn-warning mr-4'>与第三方库协同</button>
+        </Link>
+        <Link to={''}>
+          <button className='btn btn-info mr-4'>深入JSX</button>
         </Link>
       </header>
       <section className='content'>
         <Route exact path={'/home'}>
-          <Home name={'主页'} />
+          <Home name={'主页'}/>
         </Route>
         <Route exact path={'/states'} component={States}/>
         <Route exact path={'/event'} component={Events}/>
         <Route exact path={'/forms'} component={Forms}/>
         <Route exact path={'/promotion'} component={StatePromotion}/>
         <Route exact path={'/inheritance'} component={Inheritance}/>
+        <Route exact path={'/context'} component={Context}/>
+        <Route exact path={'/errors'} component={Errors}/>
+        <Route exact path={'/refs'} component={Refs}/>
+        <Route exact path={'/fragments'} component={Fragments}/>
+        <Route exact path={'/heightCom'} component={HeightComponent}/>
+        <Route exact path={'/third'} component={ThirdParty}/>
         {/*<Redirect path={'/'} to={{pathname: "/home", state: {}}}/>*/}
       </section>
     </div>

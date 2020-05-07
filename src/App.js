@@ -1,11 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
+import './assets/css/spinkit.css'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Login} from "./views/login/Login";
 import {Dashboard} from "./views/dashboard/Dashboard";
 import {Auth} from "./routers/Auth";
 import {ErrorPage} from "./views/error/ErrorPage";
+
 export function App() {
   return (
     <div className="App">
@@ -15,10 +17,10 @@ export function App() {
             <Login/>
           </Route>
           <Route path="/error">
-            <ErrorPage />
+            <ErrorPage/>
           </Route>
           <Auth path="/">
-            <Dashboard />
+            <Dashboard/>
           </Auth>
         </Switch>
       </Router>
