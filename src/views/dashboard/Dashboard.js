@@ -18,6 +18,7 @@ import {Refs} from "../bases/Refs";
 import {Fragments} from "../bases/Fragments";
 import {HeightComponent} from "../bases/HeightComponent";
 import {ThirdParty} from "../bases/ThirdParty";
+import {DeepJsx} from "../bases/DeepJsx";
 
 export function Dashboard(props) {
   return (
@@ -59,8 +60,11 @@ export function Dashboard(props) {
         <Link to="/third">
           <button className='btn btn-warning mr-4'>与第三方库协同</button>
         </Link>
-        <Link to={''}>
+        <Link to={'/jsx'}>
           <button className='btn btn-info mr-4'>深入JSX</button>
+        </Link>
+        <Link to={''}>
+          <button className='btn btn-dark mr-4'>性能优化</button>
         </Link>
       </header>
       <section className='content'>
@@ -78,6 +82,7 @@ export function Dashboard(props) {
         <Route exact path={'/fragments'} component={Fragments}/>
         <Route exact path={'/heightCom'} component={HeightComponent}/>
         <Route exact path={'/third'} component={ThirdParty}/>
+        <Route exact path={'/jsx'} component={DeepJsx}/>
         {/*<Redirect path={'/'} to={{pathname: "/home", state: {}}}/>*/}
       </section>
     </div>
