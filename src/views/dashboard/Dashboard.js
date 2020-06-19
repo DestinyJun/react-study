@@ -19,11 +19,14 @@ import {Fragments} from "../bases/Fragments";
 import {HeightComponent} from "../bases/HeightComponent";
 import {ThirdParty} from "../bases/ThirdParty";
 import {DeepJsx} from "../bases/DeepJsx";
+import {Performance} from "../bases/Performance";
+import {Portals} from "../bases/Portals";
+import {Profiler} from "../bases/Profiler";
 
 export function Dashboard(props) {
   return (
     <div className='container-fluid'>
-      <header className="header">
+      <header className="sidebar">
         <Link to="/home">
           <button className='btn btn-primary mr-4'>主页</button>
         </Link>
@@ -63,8 +66,14 @@ export function Dashboard(props) {
         <Link to={'/jsx'}>
           <button className='btn btn-info mr-4'>深入JSX</button>
         </Link>
-        <Link to={''}>
+        <Link to={'/performance'}>
           <button className='btn btn-dark mr-4'>性能优化</button>
+        </Link>
+        <Link to={'/portals'}>
+          <button className='btn btn-primary mr-4'>Portals(暂时放弃)</button>
+        </Link>
+        <Link to={'/profiler'}>
+          <button className='btn btn-secondary mr-4'>Profiler</button>
         </Link>
       </header>
       <section className='content'>
@@ -83,6 +92,9 @@ export function Dashboard(props) {
         <Route exact path={'/heightCom'} component={HeightComponent}/>
         <Route exact path={'/third'} component={ThirdParty}/>
         <Route exact path={'/jsx'} component={DeepJsx}/>
+        <Route exact path={'/performance'} component={Performance}/>
+        <Route exact path={'/portals'} component={Portals}/>
+        <Route exact path={'/profiler'} component={Profiler}/>
         {/*<Redirect path={'/'} to={{pathname: "/home", state: {}}}/>*/}
       </section>
     </div>
