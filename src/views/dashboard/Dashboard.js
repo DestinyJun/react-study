@@ -22,6 +22,8 @@ import {DeepJsx} from "../bases/DeepJsx";
 import {Performance} from "../bases/Performance";
 import {Portals} from "../bases/Portals";
 import {Profiler} from "../bases/Profiler";
+import {CreateReactClass} from "../bases/CreateReactClass";
+import {JsxComponent} from "../bases/JsxComponent";
 
 export function Dashboard(props) {
   return (
@@ -75,6 +77,12 @@ export function Dashboard(props) {
         <Link to={'/profiler'}>
           <button className='btn btn-secondary mr-4'>Profiler</button>
         </Link>
+        <Link to={'/es6'}>
+          <button className='btn btn-success mr-4'>组件创建语法</button>
+        </Link>
+        <Link to={'jsxs'}>
+          <button className='btn btn-danger mr-4'>不使用JSX</button>
+        </Link>
       </header>
       <section className='content'>
         <Route exact path={'/home'}>
@@ -95,6 +103,8 @@ export function Dashboard(props) {
         <Route exact path={'/performance'} component={Performance}/>
         <Route exact path={'/portals'} component={Portals}/>
         <Route exact path={'/profiler'} component={Profiler}/>
+        <Route exact path={'/es6'} component={CreateReactClass}/>
+        <Route exact path={'/jsxs'} component={JsxComponent}/>
         {/*<Redirect path={'/'} to={{pathname: "/home", state: {}}}/>*/}
       </section>
     </div>
